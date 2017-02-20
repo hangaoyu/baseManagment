@@ -1,5 +1,5 @@
 composer.phar
-/vendor/
+
 .idea
 
 # Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
@@ -11,7 +11,7 @@ composer.phar
 composer.lock
 
 /public/storage
-/public/assets/backend/images
+
 #IDE file
 .buildpath
 .project
