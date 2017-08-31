@@ -11,13 +11,14 @@
 
 namespace Symfony\Component\HttpKernel\Tests\Controller;
 
+use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 use Symfony\Component\HttpKernel\Tests\Fixtures\Controller\NullableController;
 use Symfony\Component\HttpKernel\Tests\Fixtures\Controller\VariadicController;
 use Symfony\Component\HttpFoundation\Request;
 
-class ControllerResolverTest extends \PHPUnit_Framework_TestCase
+class ControllerResolverTest extends TestCase
 {
     public function testGetControllerWithoutControllerParameter()
     {
@@ -183,7 +184,7 @@ class ControllerResolverTest extends \PHPUnit_Framework_TestCase
         $request->attributes->set('foobar', 'foobar');
         $controller = array(new self(), 'controllerMethod3');
 
-        if (PHP_VERSION_ID === 50316) {
+        if (\PHP_VERSION_ID === 50316) {
             $this->markTestSkipped('PHP 5.3.16 has a major bug in the Reflection sub-system');
         } else {
             try {
